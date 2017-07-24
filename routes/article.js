@@ -47,8 +47,8 @@ router.get('/delete/:_id',function (req, res) {
 router.get('/update/:_id',function (req, res) {
     let _id=req.params._id;
     Category.find({user:req.session.user._id},function (err, categories) {
-        Article.findById({_id},function (err, article) {
-            res.render('article/add',{article,categories})
+        Article.findById(_id).exec(function (err, article) {
+            res.render('article/add',{title:'编辑内容',article,categories})
         })
     })
 });

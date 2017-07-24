@@ -21,13 +21,13 @@
                         let selected = currentCid==articleCid?'selected':'';
                         %>
 
-                        <option> <%=selected%> <%=category.name%></option>
+                        <option <%=selected%> value="<%=category._id%>"><%=category.name%></option>
                         <%})%>
 
                     </select>
                     <%}else{%>
                     <div class="form-group row">
-                        <div class="col-md-10 col-md-offset-2">
+                        <div class="col-md-10">
                             <a href="/category/add" class="btn btn-primary">增加文章分类</a>
 
                         </div>
