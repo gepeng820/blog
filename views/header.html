@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        .user{
+            width: 23px;
+            height: 23px;
+        }
+        .title{
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand">🚓博客</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <%if(user){%>
+            <li><a href="/article/add">发表文章</a></li>
+            <li><a href="/category/list">分类管理</a></li>
+            <li><a href="/user/signout">退出</a></li>
+            <%}else{%>
+            <li><a href="/user/signup">注册</a></li>
+            <li><a href="/user/signin">登陆</a></li>
+            <%}%>
+        </ul>
+        <%if(user){%>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href=""><img class="user" src="<%=user.avatar%>" alt="<%=user.username%>"><span><%=user.username%></span></a></li>
+        </ul>
+        <%}%>
+    </div>
+
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <%if(success){%>
+            <div class="alert alert-success text-center"><%=success%></div>
+            <%}%>
+            <%if(error){%>
+            <div class="alert alert-danger text-center"><%=error%></div>
+            <%}%>
+
+        </div>
+    </div>

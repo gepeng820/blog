@@ -67,3 +67,4 @@ npm install express body-parser bootstrap connect-flash connect-mongo debug ejs 
 |文章内容|content|字符串|
 |作者|author|ID类型|
 |发表时间|createAt|日期|
+
